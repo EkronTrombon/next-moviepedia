@@ -80,8 +80,8 @@ export default function ImageSlider({ cast }) {
       {/* Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-transparent flex items-center justify-center z-50 p-4" onClick={closeModal}>
-          <div className="bg-white rounded-lg overflow-hidden max-w-4xl w-full shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-center p-4 border-b">
+          <div className="bg-secondary rounded-lg overflow-hidden max-w-3xl w-full shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center p-4 border-b border-black">
               <h3 className="text-black text-3xl font-bold">{selectedImage.name}</h3>
               <button onClick={closeModal} className="text-black hover:rotate-90 transition-transform duration-300 focus:outline-none" aria-label="Close modal">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,8 +89,16 @@ export default function ImageSlider({ cast }) {
                 </svg>
               </button>
             </div>
-            <div className="p-4">
-              <Image className="rounded-lg border border-white" src={`https://image.tmdb.org/t/p/w500${selectedImage.profile_path}`} alt={selectedImage.name} width={250} height={250}/>
+            <div className="p-4 flex justify-start gap-5">
+              <Image className="rounded-lg border border-white h-fit" src={`https://image.tmdb.org/t/p/w500${selectedImage.profile_path}`} alt={selectedImage.name} width={250} height={250}/>
+              <div className="flex flex-col gap-2 text-black">
+                <ul>
+                  <li><strong>Department:</strong> {selectedImage.known_for_department}</li>
+                  <li><strong>Birthday:</strong> {selectedImage.birthday}</li>
+                  <li><strong>Place of Birth:</strong> {selectedImage.place_of_birth}</li>
+                  <li><strong>Bio:</strong> {selectedImage.biography}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

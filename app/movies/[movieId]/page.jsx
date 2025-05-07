@@ -8,9 +8,6 @@ export default async function MovieDetailPage({params}) {
     const { movieId } = await params;
     const movie = await getMovie(movieId);
     const cast = await getCast(movieId);
-    
-    console.log(cast);
-    
 
     return (
         <>
