@@ -15,13 +15,13 @@ export default function MainHeader() {
                     <nav>
                         <ul className="flex space-x-8">
                             <li className="text-2xl transition-colors duration-300 hover:text-secondary">
-                                <Link href="/">Movies</Link>
+                                <Link href="/movies/">Movies</Link>
                             </li>
                             <li className="text-2xl transition-colors duration-300 hover:text-secondary">
-                                <Link href="/">Actors</Link>
+                                <Link href="/series/">TV Series</Link>
                             </li>
                             <li className="text-2xl transition-colors duration-300 hover:text-secondary">
-                                <Link href="/">Game</Link>
+                                <Link href="/people/">People</Link>
                             </li>
                         </ul>
                     </nav>

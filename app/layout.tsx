@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import MainHeader from "@/components/main-header/main-header";
 
+import { nunito, sansation } from '@/lib/fonts';
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${nunito.variable} ${sansation.variable}`}>
         <MainHeader />
         {children}
       </body>
