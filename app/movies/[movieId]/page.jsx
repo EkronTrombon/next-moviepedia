@@ -11,8 +11,8 @@ export default async function MovieDetailPage({params}) {
 
     return (
         <>
-            <div className="mt-10 container">
-                <div className='flex justify-between items-start gap-10'>
+            <div className="mt-5 md:mt-10 container">
+                <div className='flex flex-col md:flex-row justify-between items-start gap-10'>
                     <Image className="rounded-lg border border-white w-full md:w-1/3" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} width={500} height={500}/>
                     <div className="w-full md:w-2/3 flex flex-col justify-start items-start gap-5">
                         <h1>{movie.title}</h1>

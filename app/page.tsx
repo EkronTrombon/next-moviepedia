@@ -6,8 +6,8 @@ export default async function Home() {
   
   return (
     <>
-      <div className="container py-10">
-        <h1 className='text-center'>Playing Now</h1>
+      <div className="container py-5 md:py-10">
+        <h2 className='text-center'>Playing Now</h2>
         <ul className='mt-10 grid grid-cols-3 md:grid-cols-5 gap-5'>
           {nowPlayingMovies.map((movie) => (
             <MovieCard movie={movie} />

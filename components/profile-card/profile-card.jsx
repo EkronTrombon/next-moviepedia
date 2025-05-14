@@ -12,7 +12,6 @@ export default function ProfileCard({ profile, onImageClick }) {
             setIsLoading(true);
             // Fetch the complete person data using the profile.id
             const personData = await getPerson(profile.id);
-            console.log(personData);
             
             // Pass the complete person data to the parent component
             onImageClick(personData);

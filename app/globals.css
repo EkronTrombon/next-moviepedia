@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    @apply max-w-[1280px] mx-auto;
+    @apply px-5 md:px-0 max-w-[1280px] mx-auto;
 }
 
 h1,
@@ -43,5 +43,32 @@ h6,
 
 h1,
 .h1 {
-    @apply text-3xl md:text-6xl font-bold;
+    @apply text-3xl md:text-6xl font-bold tracking-wide;
+}
+
+h2,
+.h2 {
+    @apply text-xl md:text-3xl font-bold;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-primary rounded;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* For Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #000000;
+}
+
+.text-shadow-white {
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }

@@ -8,6 +8,8 @@ import Image from 'next/image';
 
 import ProfileCard from '@/components/profile-card/profile-card';
 
+import personPlaceholder from '@/assets/Person_placeholder.png';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -37,7 +39,7 @@ export default function ImageSlider({ cast }) {
   if (!mounted) return null;
   
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full md:max-w-4xl md:mx-auto">
       {/* Custom navigation arrows outside the slider */}
       <div className="flex items-center justify-between">
         <div className="swiper-button-prev-custom cursor-pointer text-white hover:text-secondary transition-colors">
@@ -50,7 +52,12 @@ export default function ImageSlider({ cast }) {
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
-            slidesPerView={5}
+            slidesPerView={2}
+            breakpoints={{
+              768: {
+                slidesPerView: 4,
+              }
+            }}
             navigation={{
               prevEl: '.swiper-button-prev-custom',
               nextEl: '.swiper-button-next-custom',
@@ -89,14 +96,19 @@ export default function ImageSlider({ cast }) {
                 </svg>
               </button>
             </div>
-            <div className="p-4 flex justify-start gap-5">
-              <Image className="rounded-lg border border-white h-fit" src={`https://image.tmdb.org/t/p/w500${selectedImage.profile_path}`} alt={selectedImage.name} width={250} height={250}/>
+            <div className="p-4 flex flex-col md:flex-row justify-start gap-5">
+              <Image className="rounded-lg border border-white h-fit" src={selectedImage.profile_path != null ? `https://image.tmdb.org/t/p/w500${selectedImage.profile_path}` : personPlaceholder} alt={selectedImage.name} width={250} height={250}/>
               <div className="flex flex-col gap-2 text-black">
-                <ul>
+                <ul className="flex flex-col h-full">
                   <li><strong>Department:</strong> {selectedImage.known_for_department}</li>
                   <li><strong>Birthday:</strong> {selectedImage.birthday}</li>
                   <li><strong>Place of Birth:</strong> {selectedImage.place_of_birth}</li>
-                  <li><strong>Bio:</strong> {selectedImage.biography}</li>
+                  <li>
+                    <strong>Bio:</strong> 
+                    <div className="max-h-64 overflow-y-auto border border-black p-2 mt-1 rounded custom-scrollbar">
+                      {selectedImage.biography}
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
