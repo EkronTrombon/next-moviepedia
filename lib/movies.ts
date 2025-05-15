@@ -13,6 +13,10 @@ export const getNowPlaying = async () => {
 }
 
 export const getMoviesBySearch = async (term: string) => {
+    await new Promise((resolve) => {
+        setTimeout(() => resolve(true), 2000)
+    })
+    
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${term}`, {
         method: 'GET',
         headers: {

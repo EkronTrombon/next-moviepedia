@@ -15,6 +15,7 @@ export default function ProfileCard({ profile, onImageClick }) {
             
             // Pass the complete person data to the parent component
             onImageClick(personData);
+            document.getElementById('selected-actor')?.showModal();
         } catch (error) {
             console.error("Error fetching person data:", error);
         } finally {
@@ -23,7 +24,7 @@ export default function ProfileCard({ profile, onImageClick }) {
     };
 
     return (
-        <div className="relative flex flex-col justify-center items-center gap-2 cursor-pointer" onClick={handleClick}>
+        <button type="button" className="relative flex flex-col justify-center items-center gap-2 cursor-pointer" onClick={handleClick}>
             {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-lg z-10">
                     <div className="animate-spin h-6 w-6 border-2 border-white border-t-transparent rounded-full"></div>
@@ -34,6 +35,6 @@ export default function ProfileCard({ profile, onImageClick }) {
                 <p className="text-center text-sm font-semibold text-white">{profile.name}</p>
                 <p className="text-center text-xs text-white">({profile.character})</p>
             </div>
-        </div>
+        </button>
     );
 }
