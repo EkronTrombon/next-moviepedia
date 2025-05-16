@@ -15,4 +15,26 @@ declare namespace People {
         popularity: number
         profile_path: string
     }
+
+    type ListResponse<T> = {
+        page: number
+        results: T[]
+        total_pages: number
+        total_results: number
+    }
+
+    type PersonImages = {
+        id: number
+        profiles: PersonImage[]
+    }
+
+    type PersonImage = {
+        aspect_ratio: number
+        height: number
+        iso_639_1: string
+        file_path: string
+        vote_average: number
+        vote_count: number
+        width: number
+    }
 }

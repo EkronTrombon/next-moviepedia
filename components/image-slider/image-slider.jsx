@@ -44,7 +44,7 @@ export default function ImageSlider({ cast }) {
       <div className="relative w-full md:max-w-4xl md:mx-auto">
         {/* Custom navigation arrows outside the slider */}
         <div className="flex items-center justify-between">
-          <div className="swiper-button-prev-custom cursor-pointer text-white hover:text-secondary transition-colors">
+          <div className="hidden md:block swiper-button-prev-custom cursor-pointer text-white hover:text-secondary transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -80,7 +80,7 @@ export default function ImageSlider({ cast }) {
             </Swiper>
           </div>
           
-          <div className="swiper-button-next-custom cursor-pointer text-white hover:text-secondary transition-colors">
+          <div className="hidden md:block swiper-button-next-custom cursor-pointer text-white hover:text-secondary transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

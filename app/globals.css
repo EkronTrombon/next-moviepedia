@@ -51,6 +51,11 @@ h2,
     @apply text-xl md:text-3xl font-bold;
 }
 
+h3,
+.h3 {
+    @apply text-base md:text-xl font-bold;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
     @apply w-2;
 }

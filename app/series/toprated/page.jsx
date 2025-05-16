@@ -1,10 +1,10 @@
-import { getTrendingTv } from "@/lib/tv";
+import { getTopRatedTv } from "@/lib/tv";
 import TvCard from "@/components/tv-card/tv-card";
 import GridBig from "@/components/grid-big/grid-big";
 
-export default async function TrendingTVPage() {
+export default async function PopularTVPage() {
 
-    const series = await getTrendingTv();
+    const series = await getTopRatedTv();
     
     return (
         <div>

@@ -7,7 +7,7 @@ export default async function Home() {
   
   return (
     <div className="container py-5 md:py-10">
-      <h2 className='text-center'>Playing Now</h2>
+      <h2 className='text-center mb-10'>Playing Now</h2>
       <GridBig>
         {nowPlayingMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
